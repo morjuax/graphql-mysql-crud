@@ -1,13 +1,12 @@
 import app from './app';
 import { connectDB } from './db';
-
-const port = process.env.PORT || 3000;
+import { PORT } from './config';
 
 async function bootstrap() {
   try {
     await connectDB();
-    app.listen(port)
-    console.log(`Listening on port ${port}`);
+    app.listen(PORT)
+    console.log(`Listening on port ${PORT}`);
   } catch (e) {
     console.log(e)
   }
